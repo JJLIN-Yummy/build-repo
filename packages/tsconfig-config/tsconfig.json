@@ -1,0 +1,71 @@
+{
+  "compilerOptions": {
+    // 1. 目标编译的ECMAScript版本："esnext"表示最新ES标准（Vite已支持，无需降级）
+    "target": "esnext",
+    // 2. 模块系统："esnext"适配ES模块（Vite原生支持ESModule，推荐）
+    "module": "esnext",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": false,
+    // 3. 模块解析策略："node"遵循Node.js的模块解析规则（Vue3+Vite项目标配）
+    "moduleResolution": "node",
+    // 4. 开启严格类型检查模式（核心配置，Vue3+TS必开，包含noImplicitAny、strictNullChecks等）
+    "strict": true,
+    // 5. 强制文件名大小写一致（避免跨系统（Windows/Linux）因大小写导致的文件查找错误）
+    "forceConsistentCasingInFileNames": true,
+    // 6. 允许导入无默认导出的模块时使用默认导入语法（如import React from 'react'）
+    "allowSyntheticDefaultImports": true,
+    // 7. 关闭严格的函数类型检查（避免某些第三方库/装饰器因类型严格导致报错）
+    "strictFunctionTypes": false,
+    // 8. JSX处理方式："preserve"保留JSX语法（Vue3的JSX由@vue/babel-plugin-jsx处理，无需TS编译）
+    "jsx": "preserve",
+    // 9. 模块解析的基础路径："."表示项目根目录（配合paths别名使用）
+    "baseUrl": ".",
+    "outDir": "./dist/ts",
+    // 10. 允许编译JS文件（方便项目中混合TS/JS，比如旧的JS工具类）
+    "allowJs": true,
+    // 11. 生成SourceMap文件（开发环境调试用，生产环境需关闭）
+    "sourceMap": true,
+    // 12. 允许CommonJS模块以ESModule方式导入（兼容require/module.exports）
+    "esModuleInterop": true,
+    // 13. 允许导入JSON文件（如import packageJson from './package.json'）
+    "resolveJsonModule": true,
+    // 14. 检测未使用的局部变量并报错（强制代码整洁，避免冗余）
+    "noUnusedLocals": true,
+    // 15. 检测未使用的函数参数并报错（同上，强制代码整洁）
+    "noUnusedParameters": true,
+    // 16. 开启实验性的装饰器语法（如使用class装饰器、vue-class-component等场景）
+    "experimentalDecorators": true,
+    // 17. 指定TS编译时依赖的内置库类型：dom（浏览器API）+ esnext（最新ES API）
+    "lib": ["dom", "esnext"],
+    // 18. 类型声明文件的根目录：优先查找node_modules/@types，其次是项目根目录的types文件夹
+    "typeRoots": ["./node_modules/@types/", "./types"],
+    // 19. 关闭隐式any检查（允许变量未指定类型时默认any，降低TS上手成本，strict模式下需显式关闭）
+    "noImplicitAny": false,
+    // 20. 跳过第三方库的类型检查（避免node_modules里的库类型定义错误导致编译失败）
+    "skipLibCheck": true,
+    // 21. 路径别名配置：@指向src目录，/#指向types目录（配合Vite的resolve.alias同步配置）
+    "paths": {
+      "@/*": ["src/*"],
+      "/#/*": ["types/*"],
+    },
+    // "resolveExtensions": [".ts", ".tsx", ".js", ".jsx", ".json"]
+  },
+  // 22. 需要TS编译/类型检查的文件范围
+  "include": [
+    "src/**/*.ts", // src下所有TS文件
+    "src/**/*.d.ts", // src下所有类型声明文件
+    "src/**/*.tsx", // src下所有TSX文件（如有React/JSX场景）
+    "src/**/*.vue", // src下所有Vue文件（需@vuedx/typescript-plugin-vue支持）
+    "types/**/*.d.ts", // types目录下所有类型声明文件
+    "types/**/*.ts", // types目录下所有TS文件
+    "build/**/*.ts", // build目录下所有TS文件（如Vite构建脚本）
+    "build/**/*.d.ts", // build目录下所有类型声明文件
+    "mock/**/*.ts", // mock目录下所有TS文件（如接口模拟数据）
+    "components.d.ts", // Vue组件自动生成的类型声明文件（如unplugin-vue-components）
+    "vite.config.ts", // Vite配置文件
+    "scripts/**/*.ts"
+  ],
+  // 23. 排除不需要TS编译/类型检查的文件
+  "exclude": ["node_modules", "dist", "**/*.js","src/layout/components/TagsView/*.vue"]
+}

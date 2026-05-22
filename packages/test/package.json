@@ -1,0 +1,23 @@
+{
+  "name": "@build/test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.8.0",
+  "dependencies": {
+    "@build/eslint-config": "workspace: *",
+    "@build/prettier-config": "workspace: *",
+    "@build/stylelint-config": "workspace: *",
+    "@build/commitlint-config": "workspace: *",
+    "@build/lint-config": "workspace: *"
+
+  }
+}

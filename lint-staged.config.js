@@ -1,0 +1,1 @@
+export { lintStaged } from '@build/lint-config'

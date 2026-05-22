@@ -1,0 +1,22 @@
+{
+  "name": "@build/stylelint-config",
+  "version": "1.0.0",
+  "description": "",
+  "main": "stylelint.config.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.8.0",
+  "peerDependencies": {
+    "stylelint": ">=16.0.0"
+  },
+  "dependencies": {
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-prettier": "^9.0.5"
+  }
+}
