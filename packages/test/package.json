@@ -18,6 +18,5 @@
     "@build/stylelint-config": "workspace: *",
     "@build/commitlint-config": "workspace: *",
     "@build/lint-config": "workspace: *"
-
   }
 }
