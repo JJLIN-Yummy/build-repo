@@ -7,7 +7,14 @@
   "module": "true",
   "private": true,
   "scripts": {
-    "lint:fix": "eslint . --fix"
+    "lint:eslint:fix": "eslint . --fix",
+    "lint:eslint": "eslint .",
+    "commit": "git-cz"
+  },
+  "config": {
+    "commitzen": {
+      "path": "node_modules/cz-git"
+    }
   },
   "keywords": [],
   "author": "",
@@ -18,7 +25,10 @@
     "@build/eslint-config": "workspace: *",
     "@build/lint-config": "workspace: *",
     "@commitlint/cli": "^21.0.1",
+    "@commitlint/config-conventional": "^21.0.1",
+    "commitizen": "^4.3.1",
     "eslint": "^9.39.4",
+    "git-cz": "^4.9.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.5"
   }
