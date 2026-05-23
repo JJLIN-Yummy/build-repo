@@ -1,1 +1,1 @@
-export { lintStaged } from '@build/lint-config'
+export { lintStaged } from '@build/lint-config';

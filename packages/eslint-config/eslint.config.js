@@ -1,29 +1,37 @@
-import js from '@eslint/js'
-import vue from 'eslint-plugin-vue'
-import prettier from 'eslint-config-prettier'
-import globals from 'globals'
+import js from '@eslint/js';
+import vue from 'eslint-plugin-vue';
+import prettier from 'eslint-config-prettier';
+import globals from 'globals';
 
 export default [
-    js.configs.recommended,
-    ...vue.configs['flat/recommended'],
-    prettier,
-    {
-        files: ['**/*.{js,ts,vue}'],
-        languageOptions: {
-            ecmaVersion: 'latest',
-            sourceType: 'module',
-            globals: {
-                ...globals.browser,
-                ...globals.node,
-                uni: 'readonly',
-                wx: 'readonly'
-            }
-        },
-        rules: {
-            "no-var": "error",
-            "prefer-const": "error",
-            "no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
-            "vue/multi-word-component-names": "off"
-        }
+  js.configs.recommended,
+  ...vue.configs['flat/recommended'],
+  prettier,
+  {
+    files: ['**/*.{js,ts,vue}'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        uni: 'readonly',
+        wx: 'readonly'
+      }
+    },
+    rules: {
+      "no-var": "error",
+      "prefer-const": "error",
+      "no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+      "vue/multi-word-component-names": "off",
+      // ✅ 强制加分号（关键！）
+      semi: ['error', 'always'],
+
+      // ✅ 等号两边必须加空格
+      'space-infix-ops': 'error',
+
+      // ✅ 缩进 2 格
+      indent: ['error', 2],
     }
-]
+  }
+];

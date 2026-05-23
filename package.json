@@ -7,18 +7,19 @@
   "module": "true",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-
+    "lint:fix": "eslint . --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.8.0",
   "devDependencies": {
-    "@commitlint/cli": "^21.0.1",
-    "husky": "^9.1.7",
-    "lint-staged": "^17.0.5",
     "@build/commitlint-config": "workspace: *",
-    "@build/lint-config": "workspace: *"
+    "@build/eslint-config": "workspace: *",
+    "@build/lint-config": "workspace: *",
+    "@commitlint/cli": "^21.0.1",
+    "eslint": "^9.39.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.5"
   }
 }

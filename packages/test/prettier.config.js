@@ -1,1 +1,1 @@
-export { default } from '@build/prettier-config'
+export { default } from '@build/prettier-config';
