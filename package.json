@@ -9,7 +9,8 @@
   "scripts": {
     "lint:eslint:fix": "eslint . --fix",
     "lint:eslint": "eslint .",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "cspell": "cspell lint **/*.{js,ts,tsx,vue} --no-must-find-files"
   },
   "config": {
     "commitzen": {
@@ -22,11 +23,14 @@
   "packageManager": "pnpm@10.8.0",
   "devDependencies": {
     "@build/commitlint-config": "workspace: *",
+    "@build/cspell-config": "workspace: *",
     "@build/eslint-config": "workspace: *",
     "@build/lint-config": "workspace: *",
     "@commitlint/cli": "^21.0.1",
     "@commitlint/config-conventional": "^21.0.1",
+    "@cspell/eslint-plugin": "^8.15.8",
     "commitizen": "^4.3.1",
+    "cspell": "^8.15.8",
     "eslint": "^9.39.4",
     "git-cz": "^4.9.0",
     "husky": "^9.1.7",

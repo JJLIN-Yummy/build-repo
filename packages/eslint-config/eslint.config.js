@@ -2,8 +2,18 @@ import js from '@eslint/js';
 import vue from 'eslint-plugin-vue';
 import prettier from 'eslint-config-prettier';
 import globals from 'globals';
+import cspellPlugin from '@cspell/eslint-plugin'
 
 export default [
+  {
+    ignores: [
+      "**/eslint.config.js",
+      "**/cspell.config.js",
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/build/**"
+    ]
+  },
   js.configs.recommended,
   ...vue.configs['flat/recommended'],
   prettier,
@@ -19,7 +29,24 @@ export default [
         wx: 'readonly'
       }
     },
+    plugins: {
+      '@cspell': cspellPlugin, // 关键：注册插件
+    },
     rules: {
+      '@cspell/spellchecker': [
+        'error',
+        {
+          // ✅ 正确！官方允许的字段：configFile
+          configFile: './cspell.config.js',
+
+          autoFix: false,
+          checkComments: true,
+          checkStrings: true,
+          checkIdentifiers: false,
+          checkJSXText: true,
+          ignoreImports: true,
+        }
+      ],
       "no-var": "error",
       "prefer-const": "error",
       "no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
