@@ -3,7 +3,7 @@ import vue from 'eslint-plugin-vue';
 import prettier from 'eslint-config-prettier';
 import globals from 'globals';
 import cspellPlugin from '@cspell/eslint-plugin'
-
+//sadasd
 export default [
   {
     ignores: [
