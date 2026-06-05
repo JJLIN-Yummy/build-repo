@@ -1,6 +1,6 @@
 {
   "name": "@build/eslint-config",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "eslint.config.js",
   "type": "module",
@@ -9,6 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:eslint": "eslint ."
   },
+  "files": ["eslint.config.js","package.json"],
   "keywords": [],
   "author": "",
   "license": "ISC",
