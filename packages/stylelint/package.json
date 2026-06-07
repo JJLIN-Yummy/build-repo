@@ -1,6 +1,6 @@
 {
   "name": "@build/stylelint-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "stylelint.config.js",
   "type": "module",
@@ -9,7 +9,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "pub": "pnpm publish --no-git-checks"
   },
-  "files": ["stylelint.config.js"],
+  "files": [
+    "stylelint.config.js"
+  ],
   "publishConfig": {
     "registry": "http://localhost:4873"
   },

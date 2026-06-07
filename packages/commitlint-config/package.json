@@ -1,6 +1,6 @@
 {
   "name": "@build/commitlint-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "commitlint.config.js",
   "type": "module",
@@ -9,7 +9,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "pub": "pnpm publish --no-git-checks"
   },
-  "files": ["commitlint.config.js"],
+  "files": [
+    "commitlint.config.js"
+  ],
   "publishConfig": {
     "registry": "http://localhost:4873"
   },

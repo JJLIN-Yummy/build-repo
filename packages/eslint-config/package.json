@@ -1,6 +1,6 @@
 {
   "name": "@build/eslint-config",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "eslint.config.js",
   "type": "module",
@@ -13,7 +13,10 @@
   "publishConfig": {
     "registry": "http://localhost:4873"
   },
-  "files": ["eslint.config.js","package.json"],
+  "files": [
+    "eslint.config.js",
+    "package.json"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
