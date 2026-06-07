@@ -9,12 +9,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "pub": "pnpm publish --no-git-checks"
   },
-  "files": [
-    "cspell.config.js"
-  ],
+  "files": ["cspell.config.js"],
   "publishConfig": {
     "registry": "http://localhost:4873"
   },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
