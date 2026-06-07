@@ -8,6 +8,7 @@ export default [
   {
     ignores: [
       "**/eslint.config.js",
+      "**/stylelint.config.js",
       "**/cspell.config.js",
       "**/node_modules/**",
       "**/dist/**",
