@@ -10,7 +10,10 @@
     "lint:eslint:fix": "eslint . --fix",
     "lint:eslint": "eslint .",
     "commit": "git-cz",
-    "cspell": "cspell lint **/*.{js,ts,tsx,vue} --no-must-find-files"
+    "cspell": "cspell lint **/*.{js,ts,tsx,vue} --no-must-find-files",
+    "changeset": "changeset",
+    "changeset:v": "changeset version",
+    "pub": "changeset publish"
   },
   "config": {
     "commitzen": {
@@ -26,6 +29,7 @@
     "@build/cspell-config": "workspace: *",
     "@build/eslint-config": "workspace: *",
     "@build/lint-config": "workspace: *",
+    "@changesets/cli": "^2.31.0",
     "@commitlint/cli": "^21.0.1",
     "@commitlint/config-conventional": "^21.0.1",
     "@cspell/eslint-plugin": "^8.15.8",
