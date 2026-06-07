@@ -1,12 +1,16 @@
 {
   "name": "@build/tsconfig-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "files": ["tsconfig.json"],
-  "private": true,
+  "private": false,
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pub": "pnpm publish --no-git-checks"
+  },
+  "publishConfig": {
+    "registry": "http://localhost:4873"
   },
   "keywords": [],
   "author": "",

@@ -1,12 +1,17 @@
 {
   "name": "@build/prettier-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "type": "module",
   "main": "prettier.config.js",
-  "private": true,
+  "private": false,
   "scripts": {
+    "pub": "pnpm publish --no-git-checks",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": ["prettier.config.js"],
+  "publishConfig": {
+    "registry": "http://localhost:4873"
   },
   "keywords": [],
   "author": "",
