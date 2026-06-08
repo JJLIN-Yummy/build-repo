@@ -13,10 +13,10 @@
   "license": "ISC",
   "packageManager": "pnpm@10.8.0",
   "dependencies": {
-    "@build/eslint-config": "workspace: *",
-    "@build/prettier-config": "workspace: *",
-    "@build/stylelint-config": "workspace: *",
-    "@build/commitlint-config": "workspace: *",
-    "@build/lint-config": "workspace: *"
+    "@build/eslint-config": "^1.0.0",
+    "@build/prettier-config": "^1.0.0",
+    "@build/stylelint-config": "^1.0.0",
+    "@build/commitlint-config": "^1.0.0",
+    "@build/lint-config": "^1.0.0"
   }
 }

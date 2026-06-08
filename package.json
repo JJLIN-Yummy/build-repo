@@ -25,19 +25,19 @@
   "license": "ISC",
   "packageManager": "pnpm@10.8.0",
   "devDependencies": {
-    "@build/commitlint-config": "workspace: *",
-    "@build/cspell-config": "workspace: *",
-    "@build/eslint-config": "workspace: *",
-    "@build/lint-config": "workspace: *",
+    "@build/commitlint-config": "^1.0.2",
+    "@build/cspell-config": "^1.0.2",
+    "@build/eslint-config": "^1.0.3",
+    "@build/lint-config": "^1.0.2",
     "@changesets/cli": "^2.31.0",
-    "@commitlint/cli": "^21.0.1",
-    "@commitlint/config-conventional": "^21.0.1",
-    "@cspell/eslint-plugin": "^8.15.8",
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
+    "@cspell/eslint-plugin": "^8.19.4",
     "commitizen": "^4.3.1",
-    "cspell": "^8.15.8",
+    "cspell": "^8.19.4",
     "eslint": "^9.39.4",
     "git-cz": "^4.9.0",
     "husky": "^9.1.7",
-    "lint-staged": "^17.0.5"
+    "lint-staged": "^17.0.7"
   }
 }
