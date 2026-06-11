@@ -3,7 +3,12 @@ import vue from "eslint-plugin-vue";
 import prettier from "eslint-config-prettier";
 import globals from "globals";
 import cspellPlugin from "@cspell/eslint-plugin";
-import * as path from "node:path";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 // eslint-分支修改
 export default [
   {
@@ -39,7 +44,7 @@ export default [
         "error",
         {
           // ✅ 正确！官方允许的字段：configFile
-          configFile: path.resolve(__dirname, "./cspell.config.js"),
+          configFile: "./cspell.config.js", //resolve(__dirname, './cspell.config.js')
 
           autoFix: false,
           checkComments: true,

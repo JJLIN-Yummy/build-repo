@@ -1,2 +1,2 @@
-const a = "中文sdasd"; //测试文件
+const a = "abcsadojoij"; //测试文件
 a;

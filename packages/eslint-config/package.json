@@ -1,6 +1,6 @@
 {
   "name": "@build/eslint-config",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "",
   "main": "eslint.config.js",
   "type": "module",
@@ -35,7 +35,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-vue": "^9.32.0",
     "globals": "^15.9.0",
-    "@build/cspell-config": "^1.0.0",
+    "@build/cspell-config": "^1.0.4",
     "@cspell/eslint-plugin": "^8.19.4"
   }
 }
