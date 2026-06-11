@@ -1,5 +1,13 @@
 # @build/eslint-config
 
+## 1.0.5
+
+### Patch Changes
+
+- fix cspell
+- Updated dependencies
+  - @build/cspell-config@1.0.4
+
 ## 1.0.4
 
 ### Patch Changes

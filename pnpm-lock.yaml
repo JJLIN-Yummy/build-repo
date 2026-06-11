@@ -12,11 +12,11 @@ importers:
         specifier: ^1.0.2
         version: 1.0.2(@commitlint/cli@21.0.2(@types/node@25.9.1)(conventional-commits-parser@6.4.0)(typescript@6.0.3))(@commitlint/config-conventional@21.0.2)
       '@build/cspell-config':
-        specifier: 'workspace: *'
-        version: link:packages/cspell-config
+        specifier: ^1.0.0
+        version: 1.0.4
       '@build/eslint-config':
-        specifier: 'workspace: *'
-        version: link:packages/eslint-config
+        specifier: ^1.0.0
+        version: 1.0.3(eslint@9.39.4(jiti@2.6.1))(prettier@3.8.3)
       '@build/lint-config':
         specifier: ^1.0.2
         version: 1.0.2(eslint@9.39.4(jiti@2.6.1))(husky@9.1.7)(lint-staged@17.0.7)(prettier@3.8.3)(stylelint@17.12.0(typescript@6.0.3))
@@ -65,8 +65,8 @@ importers:
   packages/eslint-config:
     dependencies:
       '@build/cspell-config':
-        specifier: ^1.0.3
-        version: 1.0.3
+        specifier: ^1.0.4
+        version: 1.0.4
       '@cspell/eslint-plugin':
         specifier: ^8.19.4
         version: 8.19.4(eslint@10.4.0(jiti@2.6.1))
@@ -165,8 +165,8 @@ packages:
       '@commitlint/cli': '>=19.0.0'
       '@commitlint/config-conventional': '>=19.0.0'
 
-  '@build/cspell-config@1.0.3':
-    resolution: {integrity: sha512-K8OOw3k45uCXg8RVqnFTJVAKAEa/l3QNz/Scb6ZJq+SrNOmfI01MA0D7YJQg+HogOY0fKKUYyxHRHQUNx0IN3A==}
+  '@build/cspell-config@1.0.4':
+    resolution: {integrity: sha512-+5msAluwoeEJ0qixX98+o2V4gIaV4QfGfHNpHhx+ncy/YuzXkh6I4xohLUts7TdFF/N2so9FcYAghAgHRVaDew==}
 
   '@build/eslint-config@1.0.3':
     resolution: {integrity: sha512-cDg9batVTtQgElbdh2QsPhcDygfZPZpzy1IJ/vnK3kfc23pvQZnUnyN3nFkdSUTpHPWEDTiTIXDsEn67UfLS0g==}
@@ -2302,7 +2302,7 @@ snapshots:
       '@commitlint/cli': 21.0.2(@types/node@25.9.1)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
       '@commitlint/config-conventional': 21.0.2
 
-  '@build/cspell-config@1.0.3': {}
+  '@build/cspell-config@1.0.4': {}
 
   '@build/eslint-config@1.0.3(eslint@10.4.0(jiti@2.6.1))(prettier@3.8.3)':
     dependencies:
@@ -2310,6 +2310,17 @@ snapshots:
       eslint: 10.4.0(jiti@2.6.1)
       eslint-config-prettier: 9.1.2(eslint@10.4.0(jiti@2.6.1))
       eslint-plugin-vue: 9.33.0(eslint@10.4.0(jiti@2.6.1))
+      globals: 15.15.0
+      prettier: 3.8.3
+    transitivePeerDependencies:
+      - supports-color
+
+  '@build/eslint-config@1.0.3(eslint@9.39.4(jiti@2.6.1))(prettier@3.8.3)':
+    dependencies:
+      '@eslint/js': 9.39.4
+      eslint: 9.39.4(jiti@2.6.1)
+      eslint-config-prettier: 9.1.2(eslint@9.39.4(jiti@2.6.1))
+      eslint-plugin-vue: 9.33.0(eslint@9.39.4(jiti@2.6.1))
       globals: 15.15.0
       prettier: 3.8.3
     transitivePeerDependencies:
@@ -3525,6 +3536,10 @@ snapshots:
     dependencies:
       eslint: 10.4.0(jiti@2.6.1)
 
+  eslint-config-prettier@9.1.2(eslint@9.39.4(jiti@2.6.1)):
+    dependencies:
+      eslint: 9.39.4(jiti@2.6.1)
+
   eslint-plugin-vue@9.33.0(eslint@10.4.0(jiti@2.6.1)):
     dependencies:
       '@eslint-community/eslint-utils': 4.9.1(eslint@10.4.0(jiti@2.6.1))
@@ -3535,6 +3550,20 @@ snapshots:
       postcss-selector-parser: 6.1.2
       semver: 7.8.1
       vue-eslint-parser: 9.4.3(eslint@10.4.0(jiti@2.6.1))
+      xml-name-validator: 4.0.0
+    transitivePeerDependencies:
+      - supports-color
+
+  eslint-plugin-vue@9.33.0(eslint@9.39.4(jiti@2.6.1)):
+    dependencies:
+      '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.4(jiti@2.6.1))
+      eslint: 9.39.4(jiti@2.6.1)
+      globals: 13.24.0
+      natural-compare: 1.4.0
+      nth-check: 2.1.1
+      postcss-selector-parser: 6.1.2
+      semver: 7.8.1
+      vue-eslint-parser: 9.4.3(eslint@9.39.4(jiti@2.6.1))
       xml-name-validator: 4.0.0
     transitivePeerDependencies:
       - supports-color
@@ -4574,6 +4603,19 @@ snapshots:
     dependencies:
       debug: 4.4.3
       eslint: 10.4.0(jiti@2.6.1)
+      eslint-scope: 7.2.2
+      eslint-visitor-keys: 3.4.3
+      espree: 9.6.1
+      esquery: 1.7.0
+      lodash: 4.18.1
+      semver: 7.8.1
+    transitivePeerDependencies:
+      - supports-color
+
+  vue-eslint-parser@9.4.3(eslint@9.39.4(jiti@2.6.1)):
+    dependencies:
+      debug: 4.4.3
+      eslint: 9.39.4(jiti@2.6.1)
       eslint-scope: 7.2.2
       eslint-visitor-keys: 3.4.3
       espree: 9.6.1
