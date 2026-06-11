@@ -6,6 +6,7 @@ export default {
     "**/build/**",
     "pnpm-lock.yaml",
     "*.log",
+    "**/.cspell/**",
     // "*.config.js",
   ],
   words: [

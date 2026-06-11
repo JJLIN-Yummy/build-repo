@@ -27,8 +27,8 @@
   "packageManager": "pnpm@10.8.0",
   "devDependencies": {
     "@build/commitlint-config": "^1.0.2",
-    "@build/cspell-config": "^1.0.2",
-    "@build/eslint-config": "^1.0.3",
+    "@build/cspell-config": "workspace: *",
+    "@build/eslint-config": "workspace: *",
     "@build/lint-config": "^1.0.2",
     "@changesets/cli": "^2.31.0",
     "@commitlint/cli": "^21.0.2",

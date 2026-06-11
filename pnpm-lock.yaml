@@ -12,11 +12,11 @@ importers:
         specifier: ^1.0.2
         version: 1.0.2(@commitlint/cli@21.0.2(@types/node@25.9.1)(conventional-commits-parser@6.4.0)(typescript@6.0.3))(@commitlint/config-conventional@21.0.2)
       '@build/cspell-config':
-        specifier: ^1.0.2
-        version: 1.0.2
+        specifier: 'workspace: *'
+        version: link:packages/cspell-config
       '@build/eslint-config':
-        specifier: ^1.0.3
-        version: 1.0.3(eslint@9.39.4(jiti@2.6.1))(prettier@3.8.3)
+        specifier: 'workspace: *'
+        version: link:packages/eslint-config
       '@build/lint-config':
         specifier: ^1.0.2
         version: 1.0.2(eslint@9.39.4(jiti@2.6.1))(husky@9.1.7)(lint-staged@17.0.7)(prettier@3.8.3)(stylelint@17.12.0(typescript@6.0.3))
@@ -65,8 +65,8 @@ importers:
   packages/eslint-config:
     dependencies:
       '@build/cspell-config':
-        specifier: ^1.0.0
-        version: 1.0.2
+        specifier: ^1.0.3
+        version: 1.0.3
       '@cspell/eslint-plugin':
         specifier: ^8.19.4
         version: 8.19.4(eslint@10.4.0(jiti@2.6.1))
@@ -165,8 +165,8 @@ packages:
       '@commitlint/cli': '>=19.0.0'
       '@commitlint/config-conventional': '>=19.0.0'
 
-  '@build/cspell-config@1.0.2':
-    resolution: {integrity: sha512-tOFbMKKnfYLiJHH7xIWZxxfVKjSu4hN98BgfradlRiWZdsaGuu7h1SFA3+K080ikEiql6LjvZ1egSHM00WdxHg==}
+  '@build/cspell-config@1.0.3':
+    resolution: {integrity: sha512-K8OOw3k45uCXg8RVqnFTJVAKAEa/l3QNz/Scb6ZJq+SrNOmfI01MA0D7YJQg+HogOY0fKKUYyxHRHQUNx0IN3A==}
 
   '@build/eslint-config@1.0.3':
     resolution: {integrity: sha512-cDg9batVTtQgElbdh2QsPhcDygfZPZpzy1IJ/vnK3kfc23pvQZnUnyN3nFkdSUTpHPWEDTiTIXDsEn67UfLS0g==}
@@ -2001,8 +2001,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  semver@7.8.2:
-    resolution: {integrity: sha512-c8jsqUZm3omBOI66G90z1Dyw5z622G8oLG+omfsHBJf3CWQTlOcwOjvOG6wtiNfW6anKm/eA39LMwMtMez2TiQ==}
+  semver@7.8.4:
+    resolution: {integrity: sha512-rUCObTnP32Q08R2uuIrt7r9PlEonuTmtuXYcW6s5kjdlj3xbnwe+21yXptAUYcMAABLkYYTtnmzb3w3EDZfueA==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -2302,7 +2302,7 @@ snapshots:
       '@commitlint/cli': 21.0.2(@types/node@25.9.1)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
       '@commitlint/config-conventional': 21.0.2
 
-  '@build/cspell-config@1.0.2': {}
+  '@build/cspell-config@1.0.3': {}
 
   '@build/eslint-config@1.0.3(eslint@10.4.0(jiti@2.6.1))(prettier@3.8.3)':
     dependencies:
@@ -2310,17 +2310,6 @@ snapshots:
       eslint: 10.4.0(jiti@2.6.1)
       eslint-config-prettier: 9.1.2(eslint@10.4.0(jiti@2.6.1))
       eslint-plugin-vue: 9.33.0(eslint@10.4.0(jiti@2.6.1))
-      globals: 15.15.0
-      prettier: 3.8.3
-    transitivePeerDependencies:
-      - supports-color
-
-  '@build/eslint-config@1.0.3(eslint@9.39.4(jiti@2.6.1))(prettier@3.8.3)':
-    dependencies:
-      '@eslint/js': 9.39.4
-      eslint: 9.39.4(jiti@2.6.1)
-      eslint-config-prettier: 9.1.2(eslint@9.39.4(jiti@2.6.1))
-      eslint-plugin-vue: 9.33.0(eslint@9.39.4(jiti@2.6.1))
       globals: 15.15.0
       prettier: 3.8.3
     transitivePeerDependencies:
@@ -2378,7 +2367,7 @@ snapshots:
       outdent: 0.5.0
       prettier: 2.8.8
       resolve-from: 5.0.0
-      semver: 7.8.2
+      semver: 7.8.4
 
   '@changesets/assemble-release-plan@6.0.10':
     dependencies:
@@ -2387,7 +2376,7 @@ snapshots:
       '@changesets/should-skip-package': 0.1.2
       '@changesets/types': 6.1.0
       '@manypkg/get-packages': 1.1.3
-      semver: 7.8.2
+      semver: 7.8.4
 
   '@changesets/changelog-git@0.2.1':
     dependencies:
@@ -2418,7 +2407,7 @@ snapshots:
       package-manager-detector: 0.2.11
       picocolors: 1.1.1
       resolve-from: 5.0.0
-      semver: 7.8.2
+      semver: 7.8.4
       spawndamnit: 3.0.1
       term-size: 2.2.1
     transitivePeerDependencies:
@@ -2444,7 +2433,7 @@ snapshots:
       '@changesets/types': 6.1.0
       '@manypkg/get-packages': 1.1.3
       picocolors: 1.1.1
-      semver: 7.8.2
+      semver: 7.8.4
 
   '@changesets/get-release-plan@4.0.16':
     dependencies:
@@ -2567,12 +2556,12 @@ snapshots:
   '@commitlint/is-ignored@21.0.1':
     dependencies:
       '@commitlint/types': 21.0.1
-      semver: 7.8.2
+      semver: 7.8.4
 
   '@commitlint/is-ignored@21.0.2':
     dependencies:
       '@commitlint/types': 21.0.1
-      semver: 7.8.2
+      semver: 7.8.4
 
   '@commitlint/lint@21.0.1':
     dependencies:
@@ -2695,7 +2684,7 @@ snapshots:
     dependencies:
       '@simple-libs/child-process-utils': 1.0.2
       '@simple-libs/stream-utils': 1.2.0
-      semver: 7.8.2
+      semver: 7.8.4
     optionalDependencies:
       conventional-commits-parser: 6.4.0
 
@@ -3453,7 +3442,7 @@ snapshots:
       cspell-lib: 8.19.4
       fast-json-stable-stringify: 2.1.0
       file-entry-cache: 9.1.0
-      semver: 7.8.2
+      semver: 7.8.4
       tinyglobby: 0.2.17
 
   css-functions-list@3.3.3: {}
@@ -3536,10 +3525,6 @@ snapshots:
     dependencies:
       eslint: 10.4.0(jiti@2.6.1)
 
-  eslint-config-prettier@9.1.2(eslint@9.39.4(jiti@2.6.1)):
-    dependencies:
-      eslint: 9.39.4(jiti@2.6.1)
-
   eslint-plugin-vue@9.33.0(eslint@10.4.0(jiti@2.6.1)):
     dependencies:
       '@eslint-community/eslint-utils': 4.9.1(eslint@10.4.0(jiti@2.6.1))
@@ -3550,20 +3535,6 @@ snapshots:
       postcss-selector-parser: 6.1.2
       semver: 7.8.1
       vue-eslint-parser: 9.4.3(eslint@10.4.0(jiti@2.6.1))
-      xml-name-validator: 4.0.0
-    transitivePeerDependencies:
-      - supports-color
-
-  eslint-plugin-vue@9.33.0(eslint@9.39.4(jiti@2.6.1)):
-    dependencies:
-      '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.4(jiti@2.6.1))
-      eslint: 9.39.4(jiti@2.6.1)
-      globals: 13.24.0
-      natural-compare: 1.4.0
-      nth-check: 2.1.1
-      postcss-selector-parser: 6.1.2
-      semver: 7.8.1
-      vue-eslint-parser: 9.4.3(eslint@9.39.4(jiti@2.6.1))
       xml-name-validator: 4.0.0
     transitivePeerDependencies:
       - supports-color
@@ -4387,7 +4358,7 @@ snapshots:
 
   semver@7.8.1: {}
 
-  semver@7.8.2: {}
+  semver@7.8.4: {}
 
   shebang-command@2.0.0:
     dependencies:
@@ -4488,7 +4459,7 @@ snapshots:
       '@csstools/selector-resolve-nested': 4.0.0(postcss-selector-parser@7.1.1)
       '@csstools/selector-specificity': 6.0.0(postcss-selector-parser@7.1.1)
       colord: 2.9.3
-      cosmiconfig: 9.0.1(typescript@6.0.3)
+      cosmiconfig: 9.0.2(typescript@6.0.3)
       css-functions-list: 3.3.3
       css-tree: 3.2.1
       debug: 4.4.3
@@ -4603,19 +4574,6 @@ snapshots:
     dependencies:
       debug: 4.4.3
       eslint: 10.4.0(jiti@2.6.1)
-      eslint-scope: 7.2.2
-      eslint-visitor-keys: 3.4.3
-      espree: 9.6.1
-      esquery: 1.7.0
-      lodash: 4.18.1
-      semver: 7.8.1
-    transitivePeerDependencies:
-      - supports-color
-
-  vue-eslint-parser@9.4.3(eslint@9.39.4(jiti@2.6.1)):
-    dependencies:
-      debug: 4.4.3
-      eslint: 9.39.4(jiti@2.6.1)
       eslint-scope: 7.2.2
       eslint-visitor-keys: 3.4.3
       espree: 9.6.1
