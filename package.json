@@ -7,6 +7,7 @@
   "module": "true",
   "private": true,
   "scripts": {
+    "husky:init": "pnpm exec husky install",
     "lint:eslint:fix": "eslint . --fix",
     "lint:eslint": "eslint .",
     "commit": "git-cz",
