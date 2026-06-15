@@ -21,7 +21,6 @@ export default [
       "**/*.lock", // pnpm-lock/yarn-lock/package-lock依赖锁定文件
     ],
   },
-
   // ====================== 第二段：所有JS/TS通用基础规则 ======================
   {
     // files：限定本段规则只作用于下面后缀的文件
@@ -49,8 +48,12 @@ export default [
     },
     rules: {
       // prettier格式化校验：格式不统一直接报错，强制代码格式化
-      "prettier/prettier": "error",
-
+      "prettier/prettier": [
+        "error",
+        {
+          endOfLine: "lf",
+        },
+      ],
       // 继承ts官方推荐基础规则（无类型依赖，JS/TS均可正常运行，不会报类型缺失）
       ...tslintPlugin.configs.recommended.rules,
 
