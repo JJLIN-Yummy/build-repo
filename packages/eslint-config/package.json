@@ -2,7 +2,7 @@
   "name": "@build/eslint-config",
   "version": "1.0.5",
   "description": "",
-  "main": "eslint.base.config.js",
+  "main": "eslint.config.js",
   "type": "module",
   "private": false,
   "scripts": {
@@ -14,7 +14,7 @@
     "registry": "http://localhost:4873"
   },
   "files": [
-    "eslint.base.config.js",
+    "eslint.config.js",
     "package.json"
   ],
   "keywords": [],

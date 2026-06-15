@@ -1,71 +1,98 @@
-import js from "@eslint/js";
-import vue from "eslint-plugin-vue";
-import prettier from "eslint-config-prettier";
-import globals from "globals";
+import path from "node:path";
 import cspellPlugin from "@cspell/eslint-plugin";
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import prettierPlugin from "eslint-plugin-prettier";
+import tslintPlugin from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// 删除 cspellConfigPath 相关读取代码，不再硬编码配置文件路径
 
-// eslint-分支修改
 export default [
+  // 全局底层忽略目录
   {
     ignores: [
-      "**/eslint.config.js",
-      "**/stylelint.config.js",
-      "**/cspell.config.js",
-      "**/node_modules/**",
       "**/dist/**",
-      "**/build/**",
+      "**/node_modules/**",
+      "**/.turbo/**",
+      "**/*.d.ts",
+      "**/coverage/**",
+      "**/*.lock",
     ],
   },
-  js.configs.recommended,
-  ...vue.configs["flat/recommended"],
-  prettier,
+
+  // 所有 JS / TS 通用基础规则（无类型依赖，JS文件不会报错）
   {
-    files: ["**/*.{js,ts,vue}"],
+    files: ["**/*.{js,mjs,cjs,ts,mts,cts,tsx}"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
+      parser: tsParser,
+      parserOptions: {
+        ecmaFeatures: { jsx: true },
+      },
       globals: {
-        ...globals.browser,
-        ...globals.node,
-        uni: "readonly",
-        wx: "readonly",
+        window: true,
+        document: true,
+        navigator: true,
+        process: true,
       },
     },
     plugins: {
-      "@cspell": cspellPlugin, // 关键：注册插件
+      prettier: prettierPlugin,
+      "@cspell": cspellPlugin,
+      "@typescript-eslint": tslintPlugin,
     },
     rules: {
-      "@cspell/spellchecker": [
-        "error",
-        {
-          // ✅ 正确！官方允许的字段：configFile
-          configFile: "./cspell.config.js", //resolve(__dirname, './cspell.config.js')
+      "prettier/prettier": "error",
 
-          autoFix: false,
-          checkComments: true,
-          checkStrings: true,
-          checkIdentifiers: false,
-          checkJSXText: true,
-          ignoreImports: true,
-        },
+      // 仅无类型依赖基础TS规则
+      ...tslintPlugin.configs.recommended.rules,
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
       ],
+      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/consistent-type-imports": [
+        "error",
+        { prefer: "type-imports", fixStyle: "separate-type-imports" },
+      ],
+
+      // JS通用规则
+      "no-console": ["warn", { allow: ["warn", "error"] }],
+      "no-debugger": "warn",
       "no-var": "error",
       "prefer-const": "error",
-      "no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
-      "vue/multi-word-component-names": "off",
-      // ✅ 强制加分号（关键！）
-      semi: ["error", "always"],
+      eqeqeq: ["error", "always"],
 
-      // ✅ 等号两边必须加空格
-      "space-infix-ops": "error",
+      // 移除 configFile，自动向上查找 cspell.config，和命令行表现完全一致
+      "@cspell/spellchecker": ["warn"],
+    },
+  },
 
-      // ✅ 缩进 2 格
-      indent: ["error", 2],
+  // 仅 TS/TSX 文件启用【依赖类型信息】的规则，JS文件不会匹配到这里
+  {
+    files: ["**/*.{ts,mts,cts,tsx}"],
+    rules: {
+      ...tslintPlugin.configs["recommended-type-checked-only"].rules,
+    },
+  },
+
+  // 单独处理纯JS文件，关闭TS插件专属表达式规则，解决根目录test.js报错
+  {
+    files: ["**/*.{js,mjs,cjs}"],
+    rules: {
+      "@typescript-eslint/no-unused-expressions": "off",
+    },
+  },
+
+  // 所有 *.config 配置文件宽松规则，唯独排除 vite.config 不走宽松
+  {
+    files: ["**/*.config.{js,mjs,ts}"],
+    ignores: ["**/vite.config.{js,mjs,ts}"],
+    rules: {
+      "@typescript-eslint/no-require-imports": "off",
+      "@typescript-eslint/no-unused-vars": "off",
     },
   },
 ];
