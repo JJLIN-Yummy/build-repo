@@ -1,5 +1,3 @@
-// 导入node内置路径模块，用于处理文件路径（当前代码已移除该变量，保留导入仅兼容历史代码，可删除）
-import path from "node:path";
 // 导入cspell拼写检查eslint插件，用于代码英文单词拼写校验
 import cspellPlugin from "@cspell/eslint-plugin";
 // 集成prettier格式化插件，统一代码格式校验
