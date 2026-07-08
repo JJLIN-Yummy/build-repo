@@ -1,2 +1,2 @@
-import cspell from '@build/cspell-config'
+import cspell from "@build/cspell-config";
 export default cspell;
