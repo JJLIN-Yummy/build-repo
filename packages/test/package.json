@@ -6,17 +6,20 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:eslint:fix": "eslint . --fix",
+    "lint:eslint": "eslint ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.8.0",
   "dependencies": {
-    "@build/eslint-config": "^1.0.0",
+    "@build/commitlint-config": "^1.0.0",
+    "@build/eslint-config": "^1.0.6",
+    "@build/lint-config": "^1.0.0",
     "@build/prettier-config": "^1.0.0",
     "@build/stylelint-config": "^1.0.0",
-    "@build/commitlint-config": "^1.0.0",
-    "@build/lint-config": "^1.0.0"
+    "@build/vite-config": "workspace: *",
+    "vite": "^7.3.5"
   }
 }
