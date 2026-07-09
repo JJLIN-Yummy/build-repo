@@ -1,7 +1,7 @@
 {
   "name": "@build/tsconfig-config",
   "version": "1.0.4",
-  "description": "",
+  "description": "ts base config",
   "main": "./tsconfig.base.json",
   "exports": {
     ".": "./tsconfig.base.json"
