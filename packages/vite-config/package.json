@@ -1,6 +1,6 @@
 {
   "name": "@build/vite-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "type": "module",
   "scripts": {
@@ -17,6 +17,9 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     }
+  },
+  "publishConfig": {
+    "registry": "http://localhost:4873"
   },
   "files": [
     "dist"
