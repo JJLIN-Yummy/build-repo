@@ -19,7 +19,7 @@
     }
   },
   "publishConfig": {
-    "registry": "http://localhost:4873"
+    "registry": "http://8.134.118.110:4873"
   },
   "files": [
     "dist"
@@ -28,6 +28,9 @@
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.8.0",
+  "peerDependencies": {
+    "vite": "^7.0.0"
+  },
   "dependencies": {
     "dotenv": "^17.4.2",
     "rollup-plugin-visualizer": "^6.0.11"

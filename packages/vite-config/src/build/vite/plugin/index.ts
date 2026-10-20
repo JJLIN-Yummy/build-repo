@@ -3,7 +3,7 @@
 // import vitePluginVueMonitor from "./vitePluginStart"
 // import vue from "@vitejs/plugin-vue"
 
-import { visualizer } from "rollup-plugin-visualizer";
+// import { visualizer } from "rollup-plugin-visualizer";
 
 export function createVitePlugins() {
   return [
@@ -15,11 +15,10 @@ export function createVitePlugins() {
     //     "React": "react",
     //     "styled":"styled-_components",
     //   }),
-
-    visualizer({
-      open: true,
-      filename: "stats.html",
-      gzipSize: true,
-    }),
+    // visualizer({
+    //   open: true,
+    //   filename: "stats.html",
+    //   gzipSize: true,
+    // }),
   ];
 }
